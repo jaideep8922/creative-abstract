@@ -59,6 +59,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import Image from "next/image"
 
 export default function MainPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -178,7 +179,7 @@ export default function MainPage() {
             {/* Enhanced Desktop Menu */}
             <div className="hidden md:block">
               <div className="ml-10 flex items-center space-x-1">
-                {["Home", "Features", "Services", "Portfolio", "About", "Team", "Contact"].map((item, index) => (
+                {["Home", "Features", "Services", "Portfolio", "About", "Team", "Contact"].map((item) => (
                   <button
                     key={item}
                     onClick={() => scrollToSection(item.toLowerCase())}
@@ -322,7 +323,9 @@ export default function MainPage() {
             <div className="relative mx-auto max-w-6xl">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 rounded-3xl blur-3xl opacity-30 animate-pulse"></div>
               <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-2 shadow-2xl border border-white/20">
-                <img
+                <Image
+                width={100}
+                height={100}
                   src="/placeholder.svg?height=600&width=1000&text=Platform+Dashboard"
                   alt="Platform Dashboard"
                   className="relative rounded-2xl shadow-2xl w-full"
@@ -665,7 +668,7 @@ export default function MainPage() {
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Discover our latest work and see how we've helped businesses transform their digital presence.
+              Discover our latest work and see how we have helped businesses transform their digital presence.
             </p>
 
             {/* Filter Buttons */}
@@ -698,7 +701,9 @@ export default function MainPage() {
                 <CardContent className="p-0">
                   {/* Project Image */}
                   <div className="relative overflow-hidden">
-                    <img
+                    <Image
+                    width={100}
+                    height={100}
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}
                       className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
@@ -810,7 +815,7 @@ export default function MainPage() {
                 Since 2020
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                We're a team of passionate innovators, designers, and engineers who believe in the power of technology
+                We are a team of passionate innovators, designers, and engineers who believe in the power of technology
                 to transform businesses and lives. Our mission is to make cutting-edge technology accessible to
                 everyone.
               </p>
@@ -838,7 +843,9 @@ export default function MainPage() {
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-3xl blur-3xl opacity-20"></div>
-              <img
+              <Image
+              width={100}
+              height={100}
                 src="/placeholder.svg?height=500&width=600"
                 alt="Our Team"
                 className="relative rounded-3xl shadow-2xl"
@@ -887,7 +894,9 @@ export default function MainPage() {
               <Card key={index} className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
                 <CardContent className="p-0">
                   <div className="relative overflow-hidden">
-                    <img
+                    <Image
+                    height={100}
+                    width={100}
                       src={member.image || "/placeholder.svg"}
                       alt={member.name}
                       className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
@@ -947,7 +956,7 @@ export default function MainPage() {
                       <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <p className="text-gray-600 mb-6 italic">"{testimonial.quote}"</p>
+                  <p className="text-gray-600 mb-6 italic">{testimonial.quote}</p>
                   <div>
                     <div className="font-semibold text-gray-900">{testimonial.author}</div>
                     <div className="text-purple-600">{testimonial.company}</div>
